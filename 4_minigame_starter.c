@@ -41,7 +41,7 @@ int login() {
     while (1) {
         char input_username[20];
         char input_password[20];
-
+ 
         printf("Enter your username: ");
         scanf("%s", input_username);
         printf("Enter your password: ");
