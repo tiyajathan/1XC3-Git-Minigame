@@ -8,7 +8,7 @@ char password[20] = "pass";
 
 int get_random_number() {
     // Generate a random number between 10 and 50
-    srand(time(NULL));
+    //srand(time(NULL));
     return rand() % 40 + 10;
 }
 
