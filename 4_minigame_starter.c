@@ -77,7 +77,7 @@ int login() {
 
 void plus_game() {
     // TODO: declare a counter to count how many correct answers the user has given
-    int i;
+    int i, correct_answers = 0;
     for (i = 0; i < 10; i++) {
         int a = get_random_number();
         int b = get_random_number();
@@ -85,12 +85,23 @@ void plus_game() {
         int user_result;
         printf("%d + %d = ", a, b);
         scanf("%d", &user_result);
-        
+
         // TODO: check if the user's answer is correct
+        if (user_result == result) {
+            printf("Correct!\n");
+        } else {
+            printf("Incorrect! The correct answer is %d\n", result);
+        }
     }
 
-    // TODO: print the number of correct answers and the accuracy of the user
-    // E.g. "You have answered 7 questions correctly. Your accuracy is 70%"
+    // Print the number of correct answers and the accuracy of the user
+    if (correct_answers == 0) { 
+        printf("You have not answered any questions correctly. Your accuracy is 0%%\n");
+    } else {
+        double accuracy = (double)correct_answers / 10 * 100;
+        printf("You have answered %d questions correctly. Your accuracy is %.2f%%\n", correct_answers, accuracy);
+    }
+    
 }
 
 void minus_game() {
