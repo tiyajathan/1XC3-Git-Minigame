@@ -42,6 +42,34 @@ int login() {
     // If the login is successful but the user is using the default username and password,
     // ask the user to change the username and password and return 1
     // If the login is successful, return 1
+
+    int attempts = 3;
+    while (1) {
+        if (strcmp(input_username, username) == 1 && strcmp(input_password, password) == 0) {
+            if (strcmp(input_username, "user") == 0 && strcmp(input_password, "pass") == 0) {
+                printf("You are using the default login details, you can now change your username and password.\n");
+                printf("Please enter a new username: ");
+                scanf("%s", username);
+                printf("Please enter a new password: ");
+                scanf("%s", password);
+                return 1;
+            }
+            else {
+                return 1;
+            }
+
+        } else {
+            printf("Invalid username or password, try again.\n");
+            printf("Attempts left: %d\n", attempts);
+            attempts--;
+
+            if (attempts == 0) {
+                printf("You have exceeded the number of attempts.\n");
+                return 0;
+            }
+        }
+    }
+
     return 0;
 }
 
@@ -107,12 +135,40 @@ int main() {
             }
             logged_in = 1;
             // TODO: print "welcone, <username>"
+            printf("Welcome, %s\n", username);
         }
         
         // Main menu
         int choice = main_menu();
         // TODO: check user's choice and invoke the corresponding function
         // If the user has entered an invalid choice, print "Invalid choice"
+        switch (choice) {
+            case 1:
+                plus_game();
+                break;
+            case 2:
+                minus_game();
+                break;
+            case 3:
+                multiply_game();
+                break;
+            case 4:
+                divide_game();
+                break;
+            case 5:
+                change_username();
+                break;
+            case 6:
+                change_password();
+                break;
+            case 7:
+                logged_in = 0;
+                break;
+            case 8:
+                return 0;
+            default:
+                printf("Invalid choice\n");
+        }
     }
 
     return 0;
