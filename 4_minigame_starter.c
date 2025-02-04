@@ -106,15 +106,89 @@ void plus_game() {
 }
 
 void minus_game() {
+     int i, correct_answers = 0;
+    for (i = 0; i < 10; i++) {
+        int a = get_random_number();
+        int b = get_random_number();
+        int result = a - b;
+        int user_result;
+        printf("%d - %d = ", a, b);
+        scanf("%d", &user_result);
 
+        // TODO: check if the user's answer is correct
+        if (user_result == result) {
+            printf("Correct!\n");
+            correct_answers++;
+        } else {
+            printf("Incorrect! The correct answer is %d\n", result);
+        }
+    }
+
+    // Print the number of correct answers and the accuracy of the user
+    if (correct_answers == 0) { 
+        printf("You have not answered any questions correctly. Your accuracy is 0%%\n");
+    } else {
+        double accuracy = (double)correct_answers / 10 * 100;
+        printf("You have answered %d questions correctly. Your accuracy is %.2f%%\n", correct_answers, accuracy);
+    }
+    
 }
 
-void multiply_game() {
 
+void multiply_game() {
+     int i, correct_answers = 0;
+    for (i = 0; i < 10; i++) {
+        int a = get_random_number();
+        int b = get_random_number();
+        int result = a * b;
+        int user_result;
+        printf("%d * %d = ", a, b);
+        scanf("%d", &user_result);
+
+        // TODO: check if the user's answer is correct
+        if (user_result == result) {
+            printf("Correct!\n");
+            correct_answers++;
+        } else {
+            printf("Incorrect! The correct answer is %d\n", result);
+        }
+    }
+
+    // Print the number of correct answers and the accuracy of the user
+    if (correct_answers == 0) { 
+        printf("You have not answered any questions correctly. Your accuracy is 0%%\n");
+    } else {
+        double accuracy = (double)correct_answers / 10 * 100;
+        printf("You have answered %d questions correctly. Your accuracy is %.2f%%\n", correct_answers, accuracy);
+    }
 }
 
 void divide_game() {
+     int i, correct_answers = 0;
+    for (i = 0; i < 10; i++) {
+        int a = get_random_number();
+        int b = get_random_number();
+        int result = a / b;
+        int user_result;
+        printf("%d / %d = ", a, b);
+        scanf("%d", &user_result);
 
+        // TODO: check if the user's answer is correct
+        if (user_result == result) {
+            printf("Correct!\n");
+            correct_answers++;
+        } else {
+            printf("Incorrect! The correct answer is %d\n", result);
+        }
+    }
+
+    // Print the number of correct answers and the accuracy of the user
+    if (correct_answers == 0) { 
+        printf("You have not answered any questions correctly. Your accuracy is 0%%\n");
+    } else {
+        double accuracy = (double)correct_answers / 10 * 100;
+        printf("You have answered %d questions correctly. Your accuracy is %.2f%%\n", correct_answers, accuracy);
+    }
 }
 
 void change_username() {
