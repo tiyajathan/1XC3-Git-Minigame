@@ -29,13 +29,6 @@ int main_menu() {
 }
 
 int login() {
-    char input_username[20];
-    char input_password[20];
-
-    printf("Enter your username: ");
-    scanf("%s", input_username);
-    printf("Enter your password: ");
-    scanf("%s", input_password);
 
     // TODO: use a loop to check username and password
     // If the user enters the wrong username or password 3 times, return 0
@@ -44,8 +37,17 @@ int login() {
     // If the login is successful, return 1
 
     int attempts = 3;
+
     while (1) {
-        if (strcmp(input_username, username) == 1 && strcmp(input_password, password) == 0) {
+        char input_username[20];
+        char input_password[20];
+
+        printf("Enter your username: ");
+        scanf("%s", input_username);
+        printf("Enter your password: ");
+        scanf("%s", input_password);
+
+        if (strcmp(input_username, username) == 0 && strcmp(input_password, password) == 0) {
             if (strcmp(input_username, "user") == 0 && strcmp(input_password, "pass") == 0) {
                 printf("You are using the default login details, you can now change your username and password.\n");
                 printf("Please enter a new username: ");
