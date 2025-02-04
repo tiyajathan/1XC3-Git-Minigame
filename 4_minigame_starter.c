@@ -89,6 +89,7 @@ void plus_game() {
         // TODO: check if the user's answer is correct
         if (user_result == result) {
             printf("Correct!\n");
+            correct_answers++;
         } else {
             printf("Incorrect! The correct answer is %d\n", result);
         }
