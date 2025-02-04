@@ -49,16 +49,10 @@ int login() {
 
         if (strcmp(input_username, username) == 0 && strcmp(input_password, password) == 0) {
             if (strcmp(input_username, "user") == 0 && strcmp(input_password, "pass") == 0) {
-                printf("You are using the default login details, you can now change your username and password.\n");
-                printf("Please enter a new username: ");
-                scanf("%s", username);
-                printf("Please enter a new password: ");
-                scanf("%s", password);
-                return 1;
+                printf("You are using the default login details, please change them.\n");
             }
-            else {
-                return 1;
-            }
+
+            return 1;
 
         } else {
             printf("Invalid username or password, try again.\n");
@@ -192,11 +186,13 @@ void divide_game() {
 }
 
 void change_username() {
-
+    printf("Please enter a new username: ");
+    scanf("%s", username);
 }
 
 void change_password() {
-
+    printf("Please enter a new password: ");
+    scanf("%s", password);
 }
 
 int main() {
